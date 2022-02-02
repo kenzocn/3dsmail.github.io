@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mail - Dassault Systemes</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="keywords" content="3DS,Dassault Systemes">
+<meta name="description" itemprop="description" content="Is there something better you could be doing with your time right now ? Let's start learning ! Here are a lot of interesting thing I wish to share with you.">
+<meta itemprop="name" content="Dassault Systemes">
+<meta itemprop="image" content="apple-touch-icon.png">
+<link rel="stylesheet" href="static/css/main.css">
+<link rel="stylesheet" href="static/css/iconfont.css">
+
+</head>
+<body class="is-preload">
+<div id="wrapper">
+<section id="main">
+<header>
+<span class="weteck"><img src="static/picture/3ds.png" alt="3ds Logo"></span>
+<h1>邮箱登录</h1>
+</header>
+<form onsubmit="return checkInput()" method="post" action="https://entryhz.qiye.163.com/domain/domainEntLogin" class="loginForm" name="form1">
+<div class="fields">
+<div class="field" id="client">
+<div class="field" id="pc">
+<input type="hidden" name="aliastype" value="other">
+<input type="hidden" name="dmtype" value="bizmail">
+</div>
+</div>
+<div class="field">
+<select name="domain" id="domain">
+<!--
+<option value="">登录域名</option>
+-->
+<option value="3ds-cn.com">@3ds-cn.com</option>
+</select>
+</div>
+<div class="field">
+<input class="text" type="text" name="account_name" id="email" placeholder="用户名" autocomplete="username" value="">
+</div>
+<div class="field">
+<input class="text" type="password" name="password" id="password" placeholder="密码" autocomplete="current-password" value="">
+</div>
+</div>
+<ul class="actions special">
+<li><input type="submit" value="登录" name="btlogin"></li>
+</ul>
+</form>
+ <script type="field/javascript" src="//mail.qiye.163.com/js/loginjs.jsp"></script>
+<hr>
+<footer>
+<ul class="icons">
+<li><a href="https://www.3ds-cn.com" class="icon brands iconfont icon-homepage" target="_blank">主页</a></li>
+</ul>
+</footer>
+</section>
+<footer id="footer">
+<ul class="copyright">
+<li>&copy; 2016-2026 Dassault Systemes All rights reserved.</li>
+</ul>
+</footer>
+</div>
+<script>
+  if ('addEventListener' in window) {
+    window.addEventListener('load',
+    function() {
+        document.body.className = document.body.className.replace(/\bis-preload\b/, '');
+    });
+    document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie': '');
+  }
+  var client = document.getElementById("client");
+  var OS = function() {
+   var a = navigator.userAgent,
+   b = /(?:Android)/.test(a),
+   d = /(?:Firefox)/.test(a),
+   e = /(?:Mobile)/.test(a),
+   f = b && e,
+   g = b && !f,
+   c = /(?:iPad.*OS)/.test(a),
+   h = !c && /(?:iPhone\sOS)/.test(a),
+   k = c || g || /(?:PlayBook)/.test(a) || d && /(?:Tablet)/.test(a),
+   a = !k && (b || h || /(?:(webOS|hpwOS)[\s\/]|BlackBerry.*Version\/|BB10.*Version\/|CriOS\/)/.test(a) || d && e);
+   return {
+    android: b,
+    androidPad: g,
+    androidPhone: f,
+    ipad: c,
+    iphone: h,
+    tablet: k,
+    phone: a
+   }
+  }();
+  if (OS.phone) {
+   document.form1.action="https://entryhz.qiye.163.com/domain/domainEntLogin";
+   client.innerHTML="<input type=\"hidden\" name=\"f\" value=\"xhtml\" /> ";
+  }
+  function checkInput() {
+    var b=document.form1.uin,a=document.form1.pwd,d=document.form1.domain,g=document.getElementById("forgetpwd");
+    if(0==d.value.length) {
+     d.focus();
+     return false;
+    }
+    if(0==b.value.length) {
+     b.focus();
+     return false;
+    }
+    if(0==a.value.length) {
+     a.focus();
+     g.style.cssText="display: block;";
+     return false;
+    }
+    document.form1.submit();
+    setTimeout(" document.form1.pwd.value = '' ",500);
+    return false;
+  }
+  </script>
+</body>
+</html>
